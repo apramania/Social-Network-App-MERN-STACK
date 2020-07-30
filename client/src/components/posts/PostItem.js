@@ -5,8 +5,7 @@ import { connect } from 'react-redux'
 import Moment from 'react-moment'
 import { addLike, removeLike, deletePost } from '../../actions/post'
 
-const PostItem = ({deletePost, addLike, removeLike, post:{_id, text, name, avatar, user, likes, comments, date}, auth, showActions}) => {
-    return (
+const PostItem = ({deletePost, addLike, removeLike, post:{_id, text, name, avatar, user, likes, comments, date}, auth, showActions}) => 
         <div class="post bg-white p-1 my-1">
             <div>
                 <Link to={`/profile/${user}`}>
@@ -28,7 +27,7 @@ const PostItem = ({deletePost, addLike, removeLike, post:{_id, text, name, avata
                 { showActions && <Fragment>
                     <button onClick={e => addLike(_id)} type="button" class="btn btn-light">
                     <i class="fas fa-thumbs-up"></i>{' '}
-                    {likes.length > 0 && (<span class='likes-count'>{likes.length}</span>)}
+                    {likes.length > 0 && <span class='likes-count'>{likes.length}</span>}
                     </button>
                     <button onClick={e => removeLike(_id)} type="button" class="btn btn-light">
                     <i class="fas fa-thumbs-down"></i>
@@ -51,8 +50,6 @@ const PostItem = ({deletePost, addLike, removeLike, post:{_id, text, name, avata
                 
             </div>
         </div>
-    )
-}
 
 PostItem.defaultProps = {
     showActions: true
