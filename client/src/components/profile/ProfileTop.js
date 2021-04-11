@@ -34,6 +34,7 @@ const ProfileTop = ({ profile:{
                 {
                   social && social.twitter && (
                     <a href={social.twitter} target="_blank" rel="noopener noreferrer">
+                      
                         <i class="fas fa-twitter fa-2x"></i>
                     </a>
                   )
